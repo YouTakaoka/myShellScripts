@@ -1,5 +1,4 @@
 #!/bin/bash
 
 name=$1
-gcc "${name}.c"
-mv a.out $name
+gcc "${name}.c" && mv a.out $name
