@@ -22,7 +22,7 @@ mkc [C source file name WITHOUT .c]
 
 ### inst
 inst [command] [package1] [package2] ...  
-*[command] is certain package management command such as apt, gem, pip.
+*[command] is certain package management command such as apt, gem, pip.  
 *Installations are saved in the "instlog" file, which is a shellscript and therefore you can easilly reproduce the installations by simply execute the file.  
 
 ## Author
