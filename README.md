@@ -4,8 +4,8 @@
 
 Tools to make your coding life confortable.
 
-*mksh: Creates a new bash shellscript file. It automatically includes shebang in the script file, and sets the mode executable.
-*emksh: After execute mksh, open the script file by Emacs.
+*mksh: Creates a new bash shellscript file. It automatically includes shebang in the script file, and sets the mode executable.  
+*emksh: After execute mksh, open the script file by Emacs.  
 *mkc: Compiles a C source code using gcc, and renames a.out to the same name as the source file.  
 *inst: Save informations of installed packages automatically.  
 
