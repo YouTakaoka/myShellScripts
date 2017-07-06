@@ -2,15 +2,16 @@
 
 cmd=$1
 arg=""
+logfile="/var/log/inst.log"
 
-while shift; do
-    arg="$arg $1"
-done
+shift
+arg="$@"
 
-if [ ! -f "instlog" ]; then
-#    echo "instlog file doesn't exist. makeing the file..."
-    touch "instlog"
-    echo "#!/bin/bash" >> instlog
+if [ ! -f "$logfile" ]; then
+    sudo touch "$logfile"
+    echo "#!/bin/bash" | sudo tee -a "$logfile"
 fi
 
-sudo $cmd install$arg && echo "sudo $cmd install$arg" >> instlog
+if sudo "$cmd" install $arg; then
+    echo "sudo $cmd install $arg" | sudo tee -a "$logfile"
+fi
