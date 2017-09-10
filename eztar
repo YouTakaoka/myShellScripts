@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+trap 'echo "Error occured."' ERR
+
+if [ "$1" = "" ]; then
+	echo "Enter the name of archive file at the first argument, and the name of new directory into wchich the files will be expanded, at the second argument."
+	echo "The second argument may be omitted, and in that case, the name of new directory will be the same as one of the archive file."
+exit 0
+fi
+
+if [ "$2" = "" ]; then
+	fname=`echo $1 | sed 's/\.tar\.gz$//' | sed 's,.*/,,g'`
+else
+	fname=$2
+fi
+
+mkdir $fname
+cd $fname
+tar -xzf ../$1
+
+echo "Files expanded in `pwd`."
