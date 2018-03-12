@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$1" = "" ]; then
+    echo "usage: sconv input_file_name"
+fi
+
+INFILE=$1
+mv "$INFILE" "${INFILE}.sjis"
+iconv -f sjis -t utf8 "${INFILE}.sjis" > "$INFILE"
